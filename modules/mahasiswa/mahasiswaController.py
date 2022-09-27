@@ -7,7 +7,7 @@ mahasiswaRouter = APIRouter(
 )
 
 @mahasiswaRouter.get("/")
-async def getMahasiswa(nim: int = 0, nama: str = ""):
+async def getMahasiswa(nim: int, nama: str):
     dataMahasiswa = {
         "nim": nim,
         "nama": nama.replace('"',"")
