@@ -1,13 +1,10 @@
 from fastapi import APIRouter
-from pydantic import BaseModel
+
+from models.mahasiswa import Mahasiswa
 
 mahasiswaRouter = APIRouter(
     prefix="/mahasiswa",
 )
-
-class Mahasiswa(BaseModel):
-    nim: int
-    name: str
 
 @mahasiswaRouter.get("/")
 async def getMahasiswa(nim: int = 0, nama: str = ""):
